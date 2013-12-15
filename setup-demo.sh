@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 # install dependencies
 sdo pip install "django==1.4" "django-compressor==1.2" "ua-parser==0.3.2"
