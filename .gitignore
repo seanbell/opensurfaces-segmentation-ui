@@ -34,4 +34,6 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
-data
+
+# Project specific
+static-tmp
