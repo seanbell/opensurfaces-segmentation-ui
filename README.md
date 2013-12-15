@@ -3,20 +3,20 @@ Segmentation UI from the OpenSurfaces Project
 
 ![](https://github.com/seanbell/opensurfaces-segmentation-ui/blob/master/screenshot.png?raw=true)
 
-## Short version
-1. Setup and run the demo:
+## Quickstart
+1. Install dependencies (django, django compressor, ua parser):
 <pre>
 sudo ./setup-demo.sh
+</pre>
+
+2. Start the local webserver:
+<pre>
 ./run-demo.sh
 </pre>
 
-2. Open a web browser and visit `localhost:8000`
+3. Open a web browser and visit `localhost:8000`
 
-## Long version
-Install Python dependencies:
-<pre>
-	sudo pip install "django&gt;=1.4.3,&lt;1.5" "django-compressor&gt;=1.2,&lt;2" "ua-parser&gt;=0.3.2,&lt;0.4"
-</pre>
+## Installation Notes
 
 The demo project is written for Django 1.4, though it probably will work with
 other versions since it uses almost no django APIs.
