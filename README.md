@@ -31,8 +31,9 @@ other versions since it uses almost no django APIs.
 The html for the segmentation tool is pieced together from a series of templates in
 `example_project/segmentation/templates` by the Django template processor.  I
 kept them separate for modularity, but you can always convert them to a static
-version by viewing the demo (at `localhost:8000`) and then saving the html
-source as a static html file.
+version by viewing the demo source (in Chrome, visit
+`view-source:localhost:8000`) and then saving the html source as a static html
+file.
 
 The javascript for the tool is compiled from coffeescript files by
 `django-compressor` and accessed by the user at a url of the form
