@@ -17,27 +17,27 @@ random string.
 ## If you are adding this to your own Django project:
 In `example_project/settings.py`, make the following changes:
 
-	1. Make sure `STATIC_ROOT` is set to an absolute writeable path.
+1. Make sure `STATIC_ROOT` is set to an absolute writeable path.
 
-	2. Add this to the `STATICFILES_FINDERS` tuple:
-	<pre>
-		'compressor.finders.CompressorFinder',
-	</pre>
+2. Add this to the `STATICFILES_FINDERS` tuple:
+<pre>
+	'compressor.finders.CompressorFinder',
+</pre>
 
-	3. Add this to the `INSTALLED_APPS` tuple:
-	<pre>
-		'django.contrib.humanize',
-		'compressor',
-		'segmentation'
-	</pre>
+3. Add this to the `INSTALLED_APPS` tuple:
+<pre>
+	'django.contrib.humanize',
+	'compressor',
+	'segmentation'
+</pre>
 
-	4. Add this to `settings.py` (e.g. at the end):
-	<pre>
-	# Django Compressor
-	COMPRESS_ENABLED = True
-	COMPRESS_OUTPUT_DIR = 'cache'
-	COMPRESS_PRECOMPILERS = (
-		('text/coffeescript', 'coffee --bare --compile --stdio'),
-		('text/less', 'lessc -x {infile} {outfile}'),
-	)
-	</pre>
+4. Add this to `settings.py` (e.g. at the end):
+<pre>
+# Django Compressor
+COMPRESS_ENABLED = True
+COMPRESS_OUTPUT_DIR = 'cache'
+COMPRESS_PRECOMPILERS = (
+	('text/coffeescript', 'coffee --bare --compile --stdio'),
+	('text/less', 'lessc -x {infile} {outfile}'),
+)
+</pre>
