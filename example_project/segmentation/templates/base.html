@@ -1,0 +1,59 @@
+{% spaceless %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+	<title>OpenSurfaces - {% block head_title %}A Richly Annotated Catalog of Surface Appearance{% endblock %}</title>
+	<meta name="description" content='{% if head_description %}{{ head_description }}{% else %}OpenSurfaces is a large database of annotated surfaces created from real-world consumer photographs. Our annotation framework draws on crowdsourcing to segment surfaces from photos, and then annotate them with rich surface properties, including material, texture and contextual information.{% endif %}'/>
+	<meta name="author" content="{% if head_author %}{{ head_author }}{% else %}Cornell University{% endif %}"/>
+
+	{% load compress %}
+	{% compress css %}
+	<link href="{{ STATIC_URL }}css/jquery-ui-1.9.1.custom.min.css" rel="stylesheet" type="text/css"/>
+	<link href="{{ STATIC_URL }}css/bootstrap-2.2.1.min.css" rel="stylesheet" type="text/css"/>
+	{% block css_responsive %}
+	<link href="{{ STATIC_URL }}css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+	{% endblock %}
+	{% endcompress %}
+
+	{% block css %}
+	{% endblock %}
+</head>
+
+{% block body_tag %}
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+{% endblock %}
+
+{% block navbar %}
+{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block subnav %}{% endblock %}
+
+{% block container %}
+{% block content_tag %}
+<div id='content-container' class='container'>
+{% endblock %}
+{% block content %}{% endblock %}
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
+{% include "base_scripts.html" %}
+{% block scripts %}{% endblock %}
+
+{% block modals %}
+{% include "modal/modal_error.html" %}
+{% include "modal/modal_loading.html" %}
+{% include "modal/modal_form.html" %}
+{% endblock %}
+
+</body>
+</html>
+{% endspaceless %}

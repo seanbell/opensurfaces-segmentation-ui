@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block css %}{{ block.super }}
+<style>body { padding-bottom: 60px; }</style>
+<link href="{{ STATIC_URL }}css/mturk.css" rel="stylesheet" />
+{% endblock %}
+
+{% comment %}
+{% block header %}
+{% if override and request.user.is_staff %}
+<div class="jumbotron subhead" style="padding: 10px 0 10px">
+	<div class="container">
+		<h1>Admin preview mode</h1>
+		<p>
+		{% if override == "task" %}
+			<a href="{% url mturk-admin-preview-task experiment_id "task" %}" role="button" class="btn">View another HIT</a>
+			<a href="{% url mturk-admin-preview-task experiment_id "inst" %}" role="button" class="btn">View instructions</a>
+		{% else %}
+			<a href="{% url mturk-admin-preview-task experiment_id "task" %}" role="button" class="btn">View random HIT</a>
+		{% endif %}
+		</p>
+	</div>
+</div>
+{% endif %}
+{% endblock %}
+{% endcomment %}
+
+{% block navbar %}{% endblock %}
+{% block header %}{% endblock %}
+{% block footer %}{% endblock %}
+{% block subnav %}{% endblock %}
+{% block modals %}{% endblock %}

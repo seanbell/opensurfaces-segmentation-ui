@@ -1,0 +1,110 @@
+<div class="modal hide fade" id="modal-feedback" tabindex="-1" role="dialog"
+	aria-labelledby="modal-feedback-label" aria-hidden="true">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal"
+			aria-hidden="true">&times;</button>
+		<h3 id="modal-feedback-label">Feedback</h3>
+	</div>
+	<div class="modal-body">
+		<div id="modal-feedback-prompt"></div>
+		<form id='modal-feedback-form' class='form-horizontal'>
+			{% comment %}
+			<div class="control-group">
+				<label class="control-label">Gender</label>
+				<div class="controls">
+					<label class="radio inline">
+						<input type="radio" name='feedback-gender' id="feedback-gender-male" value="male">Male</input>
+					</label>
+					<label class="radio inline">
+						<input type="radio" name='feedback-gender' id="feedback-gender-female" value="female">Female</input>
+					</label>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="feedback-age">Age</label>
+				<div class="controls">
+					<input type="text" id="feedback-age" placeholder="Age"/>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="feedback-language">Native language</label>
+				<div class="controls">
+					<input type="text" id="feedback-language" placeholder="Language"/>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="feedback-city">City</label>
+				<div class="controls">
+					<input type="text" id="feedback-city" placeholder="City"/>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="feedback-country">Country</label>
+				<div class="controls">
+					<input type="text" id="feedback-country" placeholder="Country"/>
+				</div>
+			</div>
+			{% endcomment %}
+			<div class="control-group">
+				<label class="control-label" for="feedback-thoughts">What did you think of this task?</label>
+				<div class="controls">
+					<textarea id="feedback-thoughts" rows="6"></textarea>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="feedback-understand">What parts didn't you understand?</label>
+				<div class="controls">
+					<textarea id="feedback-understand" rows="6"></textarea>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="feedback-other">Any other feedback, improvements, or suggestions?</label>
+				<div class="controls">
+					<textarea id="feedback-other" rows="6"></textarea>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button class="btn" data-dismiss="modal" aria-hidden="true" id="modal-feedback-cancel">Cancel</button>
+		<button class="btn btn-primary" data-dismiss="modal" aria-hidden="true" id="modal-feedback-submit">Submit</button>
+	</div>
+</div>
+
+<script type="text/javascript">
+{% ifequal ask_for_feedback "true" %}
+	window.ask_for_feedback = true;
+	window.feedback_bonus = '${{ feedback_bonus|floatformat:2 }}';
+{% else %}
+	window.ask_for_feedback = false;
+	window.feedback_bonus = '$0.00';
+{% endifequal %}
+
+window.show_modal_feedback = function(label_message, prompt_message, on_submit) {
+	$('#modal-feedback-label').empty();
+	$('#modal-feedback-bonus').empty();
+	$('#modal-feedback-prompt').empty();
+	if (label_message !== undefined) { $('#modal-feedback-label').html(label_message); }
+	if (prompt_message !== undefined) { $('#modal-feedback-prompt').html(prompt_message); }
+	$('#modal-feedback').modal('show');
+	if (on_submit !== undefined) {
+		$('#modal-feedback-submit').off('click').on('click', on_submit);
+	}
+};
+window.get_modal_feedback = function() {
+	var feedback = {};
+	var gender = $('input[name=feedback-gender]:checked', '#modal-feedback-form').val();
+	if (gender) { feedback.gender = gender; }
+	var names = [
+		{% comment %}
+		'age', 'language', 'city', 'country',
+		{% endcomment %}
+		'thoughts', 'understand', 'other'
+	];
+	for (var i = 0; i < names.length; i ++) {
+		var value = $.trim($('#feedback-' + names[i]).val());
+		if (value) { feedback[names[i]] = value; }
+	}
+	return feedback;
+};
+</script>

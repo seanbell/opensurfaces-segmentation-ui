@@ -1,0 +1,56 @@
+{% extends "mturk/mt_base_fixed.html" %}
+{% load humanize %}
+{% load compress %}
+
+{% block css %}{{ block.super }}
+<style>
+	canvas { border: 1px solid #969696; }
+	body { padding: 0 }
+</style>
+{% endblock %}
+
+{% block content %}
+<div id="mt-top-nohover">
+	<div id="mt-instructions">
+		<span>
+			Instructions: carefully trace around regions that have a single material or texture.
+			Draw <span id="mt-num-shapes">{{ min_shapes|apnumber }} polygon{{ min_shapes|pluralize }}</span> to complete the task.
+		</span>
+		<span class="pull-right">
+			<button type="button" id='btn-submit' class="btn btn-primary" disabled="disabled">Submit</button>
+		</span>
+	</div>
+
+	{% include "poly/poly_controls.html" %}
+</div>
+<div id="mt-container"></div>
+{% endblock %}
+
+{% block modals %}
+	{% include "modal/modal_instructions.html" %}
+	{% include "modal/modal_loading.html" %}
+	{% include "modal/modal_error.html" %}
+	{% include "modal/modal_areyousure.html" %}
+	{% include "modal/mt_modal_feedback.html" %}
+	{% include "modal/modal_poly_intersect.html" %}
+{% endblock %}
+
+{% block scripts %}
+
+{% include "poly/poly_scripts.html" %}
+<script type="text/javascript">
+window.template_args = {
+	photo_url: '{{ content.url }}',
+	photo_id: {{ content.id }},
+};
+{% if min_shapes %}window.min_shapes = {{ min_shapes }};{% endif %}
+{% if min_vertices %}window.min_vertices = {{ min_vertices }};{% endif %}
+</script>
+
+{% compress js %}
+<script type="text/coffeescript" src="{{ STATIC_URL }}js/common/get_url_params.coffee"></script>
+<script type="text/coffeescript" src="{{ STATIC_URL }}js/mturk/mt_submit.coffee"></script>
+<script type="text/coffeescript" src="{{ STATIC_URL }}js/mturk/mt_segment_material.coffee"></script>
+{% endcompress %}
+
+{% endblock %}
