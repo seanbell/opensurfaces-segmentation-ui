@@ -19,11 +19,11 @@ Install Python dependencies:
 The demo project is written for Django 1.4, though it probably will work with
 other versions since it uses almost no django APIs.
 
-### If you are building around this codebase:
+<b>If you are building around this codebase:</b>
 In `example_project/settings.py`, change `SECRET_KEY` to some
 random string.
 
-### If you are adding this to your own Django project:
+<b>If you are adding this to your own Django project:</b>
 In `example_project/settings.py`, make the following changes:
 
 1. Make sure `STATIC_ROOT` is set to an absolute writeable path.
