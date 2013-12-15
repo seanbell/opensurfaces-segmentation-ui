@@ -5,7 +5,7 @@ lightweight tool.  A dummy server backend is included to run the demo.
 
 ![](https://github.com/seanbell/opensurfaces-segmentation-ui/blob/master/screenshot.png?raw=true)
 
-## Quickstart (Ubuntu Linux)
+## Run with Django (Ubuntu Linux)
 1. Install dependencies (coffee-script, django, django compressor, ua parser):
 <pre>
 sudo ./setup-demo.sh
@@ -21,34 +21,34 @@ sudo ./setup-demo.sh
 The demo should also work on Mac and Windows.  You will have to look at
 `setup-demo.sh` and run the equivalent commands for your system.
 
+After you run the demo setup, the directory `static` will contain compiled css
+and javascript files.  If you change any part of the page (other than html),
+you will need to repopulate the static folder with the command:
+<pre>
+    example_project/manage.py collectstatic --noinput
+</pre>
+
+## Run without Django (Any Linux)
+
+The html for the segmentation tool is pieced together from a series of templates in
+`example_project/segmentation/templates` by the Django template processor.
+Since you may not want to use django to run your webserver, I pieced the html
+templates together into a static file (`index.html`).
+
+To set up the static files (js, css, img) and then start a local python-based
+webserver, run `./python-run-demo.sh` and then visit the printed URL (usually
+`0.0.0.0:8000`).
+
+If running without django, the submit button will simply generate an error.
+
 ## Project Notes
 
 The demo project is written for Django 1.4, though it probably will work with
 other versions since it uses almost no django APIs.
 
-#### Running the project without Django
-
-The html for the segmentation tool is pieced together from a series of templates in
-`example_project/segmentation/templates` by the Django template processor.  I
-kept them separate for modularity, but you can always convert them to a static
-version by viewing the demo source (in Chrome, visit
-`view-source:localhost:8000`) and then saving the html source as a static html
-file.
-
 The javascript for the tool is compiled from coffeescript files by
 `django-compressor` and accessed by the client at a url of the form
-`/static/cache/js/*.js`.  You can instead compile the coffeescript files into a
-single javascript file to get rid of this dependency.  To do this, run these
-commands:
-<pre>
-	cd example_project/segmentation/static/js
-	coffee --bare --join build.js --compile $(find . -name '*.coffee')
-</pre>
-It will generate `bare.js` which you can include in your static html file.
-In your static html file, make sure to remove the old `/static/cache/js/*.js`
-files.
-
-Otherwise, there is no inherent dependency on Django.
+`/static/cache/js/*.js`.
 
 #### If you are building on top of this repository:
 In `example_project/settings.py`, change `SECRET_KEY` to some
