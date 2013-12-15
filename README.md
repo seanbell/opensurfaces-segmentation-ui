@@ -1,7 +1,7 @@
-# opensurfaces-segmentation-ui
+# OpenSurfaces Segmentation UI
 This repository contains the segmentation tool, extracted from the OpenSurfaces
-project as a lightweight independent tool.  A dummy server backend is included
-to run the demo.
+project (`opensurfaces.cs.cornell.edu`) as a lightweight independent tool.  A
+dummy server backend is included to run the demo.
 
 ![](https://github.com/seanbell/opensurfaces-segmentation-ui/blob/master/screenshot.png?raw=true)
 
