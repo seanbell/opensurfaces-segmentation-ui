@@ -33,11 +33,11 @@ In `example_project/settings.py`, make the following changes:
 
 4. Add this to `settings.py` (e.g. at the end):
 <pre>
-	# Django Compressor
-	COMPRESS_ENABLED = True
-	COMPRESS_OUTPUT_DIR = 'cache'
-	COMPRESS_PRECOMPILERS = (
-		('text/coffeescript', 'coffee --bare --compile --stdio'),
-		('text/less', 'lessc -x {infile} {outfile}'),
-	)
+# Django Compressor
+COMPRESS_ENABLED = True
+COMPRESS_OUTPUT_DIR = 'cache'
+COMPRESS_PRECOMPILERS = (
+	('text/coffeescript', 'coffee --bare --compile --stdio'),
+	('text/less', 'lessc -x {infile} {outfile}'),
+)
 </pre>
