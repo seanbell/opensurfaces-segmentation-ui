@@ -25,11 +25,11 @@ other versions since it uses almost no django APIs.
 
 #### Running the project without Django
 
-The html files are a series of templates in
-`example_project/segmentation/templates` and are pieced together by the django
-template processor.  I kept them separate for readability, but you can always
-convert them to a static version by viewing the demo (at `localhost:8000`) and
-then saving the html source as a static html file.
+The html for the demo is pieced together from a series of templates in
+`example_project/segmentation/templates` by the django template processor.  I
+kept them separate for readability, but you can always convert them to a static
+version by viewing the demo (at `localhost:8000`) and then saving the html
+source as a static html file.
 
 The javascript files are written in coffeescript and are compiled on the fly by
 `django-compressor`.  You can compile the coffeescript to javascript (make sure
