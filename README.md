@@ -13,7 +13,9 @@ sudo ./setup-demo.sh
 ## Long version
 Install Python dependencies:
 <pre>
-	sudo pip install "django&gt;=1.4.3,&lt;1.5" "django-compressor&gt;=1.2,&lt;2" "ua-parser>=0.3.2,<0.4"
+	sudo pip install "django>=1.4.3,<1.5"
+	sudo pip install "django-compressor>=1.2,<2"
+	sudo pip install "ua-parser>=0.3.2,<0.4"
 </pre>
 
 The demo project is written for Django 1.4, though it probably will work with
