@@ -1,5 +1,7 @@
 # opensurfaces-segmentation-ui
-Segmentation UI from the OpenSurfaces Project
+This repository contains the segmentation tool, extracted from the OpenSurfaces
+project.  To make the tool as portable as possible, this demo contains only the
+client frontend.  No database is required.
 
 ![](https://github.com/seanbell/opensurfaces-segmentation-ui/blob/master/screenshot.png?raw=true)
 
