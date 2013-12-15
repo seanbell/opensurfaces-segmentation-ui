@@ -36,7 +36,7 @@ version by viewing the demo source (in Chrome, visit
 file.
 
 The javascript for the tool is compiled from coffeescript files by
-`django-compressor` and accessed by the user at a url of the form
+`django-compressor` and accessed by the client at a url of the form
 `/static/cache/js/*.js`.  You can instead compile the coffeescript files into a
 single javascript file to get rid of this dependency.  To do this, run these
 commands:
