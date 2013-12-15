@@ -30,13 +30,18 @@ other versions since it uses almost no django APIs.
 
 The html for the demo is pieced together from a series of templates in
 `example_project/segmentation/templates` by the Django template processor.  I
-kept them separate for readability, but you can always convert them to a static
+kept them separate for modularity, but you can always convert them to a static
 version by viewing the demo (at `localhost:8000`) and then saving the html
 source as a static html file.
 
-The javascript files are written in coffeescript and are compiled on the fly by
-`django-compressor`.  You can compile the coffeescript to javascript (make sure
-to include the `--bare` flag).
+To build the javascript files, run this command in the
+`example_project/segmentation/static/js` directory:
+<pre>
+	coffee --bare --join build.js --compile $(find . -name '*.coffee')
+</pre>
+It will generate `bare.js` which you can include in your static html file.
+In your static html file, make sure to remove the old `/static/cache/js/*.js`
+files.
 
 Otherwise, there is no inherent dependency on Django.
 
