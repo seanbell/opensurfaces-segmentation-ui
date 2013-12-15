@@ -6,7 +6,7 @@ independent tool.  A dummy server backend is included to run the demo.
 ![](https://github.com/seanbell/opensurfaces-segmentation-ui/blob/master/screenshot.png?raw=true)
 
 ## Quickstart (Ubuntu Linux)
-1. Install dependencies (django, django compressor, ua parser):
+1. Install dependencies (coffee-script, django, django compressor, ua parser):
 <pre>
 sudo ./setup-demo.sh
 </pre>
