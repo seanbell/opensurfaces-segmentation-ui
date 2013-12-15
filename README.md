@@ -4,7 +4,7 @@ opensurfaces-segmentation-ui
 Segmentation UI from the OpenSurfaces Project
 
 ## Python Dependencies
-Install python dependencies:
+Install Python dependencies:
 <pre>sudo pip install "django==1.4" "django-compressor==1.2" "ua-parser==0.3.2"</pre>
 
 The demo project is written for Django 1.4, though it probably will work with
