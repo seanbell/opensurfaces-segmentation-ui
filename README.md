@@ -5,7 +5,7 @@ independent tool.  A dummy server backend is included to run the demo.
 
 ![](https://github.com/seanbell/opensurfaces-segmentation-ui/blob/master/screenshot.png?raw=true)
 
-## Quickstart
+## Quickstart (Mac or Linux)
 1. Install dependencies (django, django compressor, ua parser):
 <pre>
 sudo ./setup-demo.sh
@@ -17,6 +17,9 @@ sudo ./setup-demo.sh
 </pre>
 
 3. Open a web browser and visit `localhost:8000`
+
+The demo should also work on Windows; I leave it up to you to figure out what
+commands to run instead.
 
 ## Project Notes
 
