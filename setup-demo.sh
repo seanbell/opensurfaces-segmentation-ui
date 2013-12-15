@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# install coffee-script dependencies (npm, node.js)
+sudo apt-get install npm nodejs
+
+# install coffee-script
+sudo npm install -g coffee-script
+
 # install python dependencies: django, django-compressor, ua-parser
 sudo pip install "django>=1.4.3,<1.5" "django-compressor>=1.2,<2" "ua-parser>=0.3.2,<0.4"
 
