@@ -36,4 +36,4 @@ nosetests.xml
 .pydevproject
 
 # Project specific
-static-tmp
+tmp-static
