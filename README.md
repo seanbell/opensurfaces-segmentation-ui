@@ -1,6 +1,8 @@
 # opensurfaces-segmentation-ui
 Segmentation UI from the OpenSurfaces Project
 
+![](https://github.com/seanbell/opensurfaces-segmentation-ui/blob/master/screenshot.png?raw=true)
+
 ## Short version
 1. Setup and run the demo:
 <pre>
