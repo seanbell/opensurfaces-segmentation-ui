@@ -10,7 +10,7 @@ django version uses a dummy django server and compiles the website live as
 necessary.  The non-django version is a flat html file extracted from the
 django version.
 
-## Run with Django (Ubuntu Linux)
+## Version 1: Run with Django (Ubuntu Linux)
 
 1. Install dependencies (coffee-script, django, django compressor, ua parser):
 <pre>
@@ -30,7 +30,7 @@ To get the demo to work on Mac and Windows, you will have to look at
 After drawing 6 polygons, the submit button will show you the POST data
 that would have been sent to the server.
 
-## Run without Django (Linux or Mac)
+## Version 2: Run without Django (Linux or Mac)
 
 To set up the static files (js, css, img) and then start a local python-based
 webserver, run `./python-run-demo.sh` and then visit the printed URL (usually
