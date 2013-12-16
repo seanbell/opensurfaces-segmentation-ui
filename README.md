@@ -71,9 +71,9 @@ and run the equivalent commands for your system.
 
 #### POST data
 
-When a user submits, the data will be sent back to the same URL via an HTTP post.
-On success, the client expects a JSON response.  It will then notify the MTurk
-server that the task is completed.  For more details, see
+When a user submits, the client will POST the data to the same URL.  On
+success, the client expects a JSON response.  The client will then notify the
+MTurk server that the task is completed.  For more details, see
 `example_project/segmentation/views.py`.
 
 When a user submits, the POST will contain these extra fields:
