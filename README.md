@@ -138,7 +138,7 @@ example_project/manage.py collectstatic --noinput
 
 #### If you are building on top of this repository:
 In `example_project/settings.py`:
-  1. change `SECRET_KEY` to some random string.
+  1. Change `SECRET_KEY` to some random string.
   2. Fill in the rest of the values (admin name, database, etc).
 
 #### If you want to add this demo to your own (separate) Django project:
