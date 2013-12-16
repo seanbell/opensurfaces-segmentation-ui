@@ -143,7 +143,7 @@ random string.
 #### If you want to add this demo to your own (separate) Django project:
 In `example_project/settings.py`, make the following changes:
 
-1. Make sure `STATIC_ROOT` is set to an absolute writeable path.
+1. Make sure `STATIC_ROOT` is set to an absolute writable path.
 
 2. Add this to the `STATICFILES_FINDERS` tuple:
 <pre>
