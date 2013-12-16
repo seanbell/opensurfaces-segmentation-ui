@@ -56,7 +56,7 @@ $( ->
         screen_height: screen.height,
         time_load_ms: window.time_load_ms
       }, data)
-      contentType: "application/x-www-form-urlencoded; charset=UTF-8"
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
       dataType: 'json'
       success: (data, status, jqxhr) ->
         console.log "partial submit success: data:"
@@ -90,7 +90,7 @@ $( ->
         screen_height: screen.height
         time_load_ms: window.time_load_ms
       }, data)
-      contentType: "application/x-www-form-urlencoded; charset=UTF-8"
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8'
       dataType: 'json'
       success: (data, status, jqxhr) ->
         console.log "success: data:"
