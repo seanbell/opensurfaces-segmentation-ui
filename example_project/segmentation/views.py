@@ -46,10 +46,11 @@ def demo(request):
     """
     # replace this with a fetch from your database
     if request.method == 'POST':
-        # all of the user submitted data is in post_data.  this will return the
-        # POST data back to the client in the form of an error message (so you
-        # can inspect it).
+        # all of the user submitted data is in post_data.
         post_data = parse_http_post_body(request)
+
+        # this will return the POST data back to the client in the form of an
+        # error message (so you can inspect it).
         return json_error_response(
             "This is a demo.  Here is the data you submitted: " +
             json.dumps(post_data))
