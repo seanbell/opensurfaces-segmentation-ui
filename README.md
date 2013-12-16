@@ -93,3 +93,39 @@ In `example_project/settings.py`, make the following changes:
 		('text/less', 'lessc -x {infile} {outfile}'),
 	)
 </pre>
+
+#### POST data
+
+When a user submits, the data will be in request.POST.
+request.POST will contain these extra fields corresponding
+to data sent by the task window:
+<pre>
+	results: a dictionary mapping from the photo ID (which is just "1" in
+		this example) to a list of polygons.  Example:
+		{"1": [[x1,y1,x2,y2,x3,y3,...], [x1,y1,x2,y2,...]]}.
+	time_ms: amount of time the user spent (whether or not
+		they were active)
+	time_active_ms: amount of time that the user was
+		active in the current window
+	action_log: a JSON-encoded log of user actions
+	screen_width: user screen width
+	screen_height: user screen height
+	version: always "1.0"
+
+	If the user gives feedback, there will also be this:
+	feedback: JSON encoded dictionary of the form:
+	{
+		'thoughts': user's response to "What did you think of this task?",
+		'understand': user's response to "What parts didn't you understand?",
+		'other': user's response to "Any other feedback, improvements, or suggestions?"
+	}
+</pre>
+
+When the user finishes the task, a popup will ask for feedback.  In the django
+version, disable this by setting `ask_for_feedback` to `'false'` in the file
+`example_project/segmentation/vies.py`.  In the non-django verfsion, update the
+`window.ask_for_feedback` variable in `index.html`.
+
+I recommend asking for feedback after the 2nd or 3rd time a user has submitted,
+not the first time, and then not asking again (otherwise it gets annoying).
+Users usually don't have ideas until they have been working for a little while.

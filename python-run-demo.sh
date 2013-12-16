@@ -13,7 +13,7 @@ for f in jquery-1.8.2.min.js jquery-ui-1.9.1.custom.min.js bootstrap-2.2.1.min.j
 done
 
 echo "Compiling coffeescript..."
-coffee --bare --join static/js/build-coffee.js --compile $(find $SRC_DIR -name '*.coffee')
+cffee --bare --join static/js/build-coffee.js --compile $(find $SRC_DIR -name '*.coffee')
 
 echo "Copying jss, css, img..."
 cp -r $SRC_DIR/css $SRC_DIR/img static

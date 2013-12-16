@@ -20,9 +20,11 @@ def demo(request):
     When a user submits, the data will be in request.POST.
     request.POST will contain these extra fields corresponding
     to data sent by the task window:
-        results: a dictionary mapping from the photo ID (which is just "1" in
+        results: a dictionary mapping from the content.id (which is just "1" in
             this example) to a list of polygons.  Example:
             {"1": [[x1,y1,x2,y2,x3,y3,...], [x1,y1,x2,y2,...]]}.
+            The x and y coordinates are fractions of the width and height
+            respectively.
         time_ms: amount of time the user spent (whether or not
             they were active)
         time_active_ms: amount of time that the user was
@@ -31,6 +33,14 @@ def demo(request):
         screen_width: user screen width
         screen_height: user screen height
         version: always "1.0"
+
+        If the user gives feedback, there will also be this:
+        feedback: JSON encoded dictionary of the form:
+        {
+            'thoughts': user's response to "What did you think of this task?",
+            'understand': user's response to "What parts didn't you understand?",
+            'other': user's response to "Any other feedback, improvements, or suggestions?"
+        }
 
     """
     # replace this with a fetch from your database
@@ -47,14 +57,31 @@ def demo(request):
 
         # hard-coded example image:
         context = {
-            'min_vertices': 4,
-            'min_shapes': 6,
+            # the current task
             'content': {
+                # the database ID of the photo.  You can leave this at 1 if you
+                # don't use a database.  When the results are submitted, the
+                # content.id is the key in a dictionary holding the polygons.
                 'id': 1,
+                # url where the photo can be fetched.
                 'url': 'http://farm9.staticflickr.com/8204/8177262167_d749ec58d9_h.jpg'
             },
-            'ask_for_feedback': True,
-            'feedback_bonus': 0.05,
+
+            # min number of shapes before the user can submit
+            'min_shapes': 6,
+
+            # min number of vertices the user must click for each shape
+            'min_vertices': 4,
+
+            # if 'true', ask the user a feedback survey at the end and promise
+            # payment to complete it.  Must be 'true' or 'false'.
+            'ask_for_feedback': 'true',
+
+            # feedback_bonus is the payment in dollars that we promise users
+            # for completing feedback
+            'feedback_bonus': 0.02,
+
+            # template containing html for instructions
             'instructions': 'mturk/mt_segment_material_inst_content.html'
         }
 
