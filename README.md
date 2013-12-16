@@ -22,7 +22,7 @@ django version.
 ./django-run-demo.sh
 </pre>
 
-3. Open a web browser and visit `localhost:8000`
+3. Visit `localhost:8000` in a web browser
 
 To get the demo to work on Mac and Windows, you will have to look at
 `setup-demo.sh` and run the equivalent commands for your system.
@@ -33,8 +33,11 @@ that would have been sent to the server.
 ## Version 2: Run without Django (Linux or Mac)
 
 To set up the static files (js, css, img) and then start a local python-based
-webserver, run `./python-run-demo.sh` and then visit the printed URL (usually
-`0.0.0.0:8000`).
+webserver, run
+<pre>
+./python-run-demo.sh
+</pre>
+and then visit the printed URL (usually `0.0.0.0:8000`) in a web browser.
 
 To get the demo to work on Windows, you will have to look at `setup-demo.sh`
 and run the equivalent commands for your system.
