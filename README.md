@@ -13,14 +13,14 @@ extracted from the django version.
 If you find this tool helpful, please cite our
 [project](http://opensurfaces.cs.cornell.edu/publications):
 <pre>
-	@inproceedings{bell13opensurfaces,
-		author = "Sean Bell and Paul Upchurch and Noah Snavely and Kavita Bala",
-		title = "OpenSurfaces: A Richly Annotated Catalog of Surface Appearance",
-		booktitle = "SIGGRAPH Conf. Proc.",
-		volume = "32",
-		number = "4",
-		year = "2013",
-	}
+@inproceedings{bell13opensurfaces,
+	author = "Sean Bell and Paul Upchurch and Noah Snavely and Kavita Bala",
+	title = "OpenSurfaces: A Richly Annotated Catalog of Surface Appearance",
+	booktitle = "SIGGRAPH Conf. Proc.",
+	volume = "32",
+	number = "4",
+	year = "2013",
+}
 </pre>
 and report any bugs using the [Github issue
 tracker](https://github.com/seanbell/opensurfaces-segmentation-ui/issues).
@@ -133,7 +133,7 @@ If you are usikng django and change any part of the static files (js, css,
 images, coffeescript), you will need to repopulate the static folder with this
 command:
 <pre>
-    example_project/manage.py collectstatic --noinput
+example_project/manage.py collectstatic --noinput
 </pre>
 
 #### If you are building on top of this repository:
