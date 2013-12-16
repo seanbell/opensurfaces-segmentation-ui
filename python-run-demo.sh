@@ -19,4 +19,4 @@ echo "Copying jss, css, img..."
 cp -r $SRC_DIR/css $SRC_DIR/img static
 
 echo "Running webserver..."
-python -m SimpleHTTPServer
+python2.7 -m SimpleHTTPServer
