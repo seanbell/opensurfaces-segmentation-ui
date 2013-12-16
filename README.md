@@ -32,8 +32,14 @@ that would have been sent to the server.
 
 ## Version 2: Run without Django (Linux or Mac)
 
-To set up the static files (js, css, img) and then start a local python-based
-webserver, run
+1. Install `npm`, `node.js`, and `coffee-script`.  On Ubuntu, this is:
+<pre>
+sudo apt-get install npm nodejs
+sudo npm install -g coffee-script
+</pre>
+
+2. Build static files (js, css, img) and then start a local python-based
+   webserver:
 <pre>
 ./python-run-demo.sh
 </pre>
