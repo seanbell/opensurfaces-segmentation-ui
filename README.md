@@ -130,6 +130,11 @@ by `django-compressor` and accessed by the client at a url of the form
 If not using django, the `python-run-demo.sh` does this for you by manually
 compiling coffeescript files and storing them in the `/static/` folder.
 
+#### Browser compatibility
+This UI works in Chrome and Firefox only.  The Django version includes a
+browser check that shows an error page if the user is not on Chrome or Firefox
+or is on a mobile device.
+
 #### Local `/static/` folder
 After you run the demo setup, the directory `/static/` will contain compiled css
 and javascript files.
