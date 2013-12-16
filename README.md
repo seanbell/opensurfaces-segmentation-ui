@@ -27,8 +27,8 @@ tracker](https://github.com/seanbell/opensurfaces-segmentation-ui/issues).
 
 ## Version 1: Run with Django (Ubuntu Linux)
 
-1. Install dependencies (`coffee-script`, `BeautifulSoup`, `django`,
-	`django-compressor`, `ua-parser`):
+1. Install dependencies (`coffee-script`, `django`, `django-compressor`,
+   `ua-parser`, `BeautifulSoup`):
 
    <b>Note:</b> this will change your django current installation if you are
    not on version `1.6.*`.  I suggest looking into the `virtualenv` package if

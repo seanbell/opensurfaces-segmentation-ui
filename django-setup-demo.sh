@@ -6,7 +6,8 @@ sudo apt-get install npm nodejs
 # install coffee-script
 sudo npm install -g coffee-script
 
-# install python dependencies: django, django-compressor, ua-parser
+# install python dependencies: django, django-compressor, ua-parser,
+# BeautifulSoup
 sudo pip install \
 	"django>=1.6.1,<1.7" \
 	"django-compressor>=1.3,<2" \
