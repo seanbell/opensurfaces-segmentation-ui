@@ -86,3 +86,6 @@ def json_error_response(error):
         json.dumps({'result': 'error', 'message': error}),
         mimetype='application/json')
 
+
+def html_error_response(request, error):
+    return render(request, "error.html", {'message': error})
