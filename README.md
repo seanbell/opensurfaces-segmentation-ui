@@ -154,7 +154,7 @@ In your `settings.py` file, make the following changes:
 <pre>
 	'django.contrib.humanize',
 	'compressor',
-	'segmentation'
+	'segmentation',
 </pre>
 
 4. Add this to `settings.py` (e.g. at the end):
