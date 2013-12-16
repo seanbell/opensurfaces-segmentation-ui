@@ -48,7 +48,9 @@ and run the equivalent commands for your system.
 The demo project is written for Django 1.4, though it probably will work with
 other versions since it uses almost no django APIs.
 
-#### Compiling from coffeescript
+#### Compiling from coffeescript (non-django version)
+You don't need to worry about this if using the django version.
+
 The javascript for the tool is compiled from coffeescript files by
 `django-compressor` and accessed by the client at a url of the form
 `/static/cache/js/*.js`.  Look at the `python-run-demo.sh` script for an
