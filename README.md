@@ -27,19 +27,9 @@ sudo ./setup-demo.sh
 The demo should also work on Mac and Windows.  You will have to look at
 `setup-demo.sh` and run the equivalent commands for your system.
 
-After you run the demo setup, the directory `static` will contain compiled css
-and javascript files.  If you change any part of the page (other than html),
-you will need to repopulate the static folder with the command:
-<pre>
-    example_project/manage.py collectstatic --noinput
-</pre>
+After drawing 6 polygons, the submit button will show you the POST data.
 
 ## Run without Django (Any Linux)
-
-The html for the segmentation tool is pieced together from a series of templates in
-`example_project/segmentation/templates` by the Django template processor.
-Since you may not want to use django to run your webserver, I pieced the html
-templates together into a static file (`index.html`).
 
 To set up the static files (js, css, img) and then start a local python-based
 webserver, run `./python-run-demo.sh` and then visit the printed URL (usually
@@ -49,12 +39,23 @@ If running without django, the submit button will simply generate an error.
 
 ## Project Notes
 
+#### Django version
 The demo project is written for Django 1.4, though it probably will work with
 other versions since it uses almost no django APIs.
 
+#### Compiling from coffeescript
 The javascript for the tool is compiled from coffeescript files by
 `django-compressor` and accessed by the client at a url of the form
-`/static/cache/js/*.js`.
+`/static/cache/js/*.js`.  Look at the `python-run-demo.sh` script for an
+example of manually compiling coffeescript files.
+
+#### Local `/static/` folder
+After you run the demo setup, the directory `static` will contain compiled css
+and javascript files.  If you change any part of the page (other than html),
+you will need to repopulate the static folder with the command:
+<pre>
+    example_project/manage.py collectstatic --noinput
+</pre>
 
 #### If you are building on top of this repository:
 In `example_project/settings.py`, change `SECRET_KEY` to some
