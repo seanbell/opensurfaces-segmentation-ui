@@ -22,6 +22,8 @@ If you find this tool helpful, please cite our
 		year = "2013",
 	}
 </pre>
+and report any bugs using the [Github issue
+tracker](https://github.com/seanbell/opensurfaces-segmentation-ui/issues).
 
 ## Version 1: Run with Django (Ubuntu Linux)
 
