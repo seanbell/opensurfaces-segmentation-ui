@@ -1,4 +1,5 @@
 import json
+import urlparse
 
 from ua_parser import user_agent_parser
 
@@ -17,8 +18,8 @@ def demo(request):
         assignment_id = request.REQUEST['assignmentId']
     and fetch a photo from the database.
 
-    When a user submits, the data will be in request.POST.
-    request.POST will contain these extra fields corresponding
+    When a user submits, the data will be in request.body.
+    request.body will contain these extra fields corresponding
     to data sent by the task window:
         results: a dictionary mapping from the content.id (which is just "1" in
             this example) to a list of polygons.  Example:
@@ -45,12 +46,13 @@ def demo(request):
     """
     # replace this with a fetch from your database
     if request.method == 'POST':
-        # all of the user submitted data is in request.POST.
-        # this will return the POST data back to the client in the form of an
-        # error message (so you can inspect it).
+        # all of the user submitted data is in post_data.  this will return the
+        # POST data back to the client in the form of an error message (so you
+        # can inspect it).
+        post_data = parse_http_post_body(request)
         return json_error_response(
-            "This is a demo.  Here is the data you submitted:" +
-            json.dumps(request.POST))
+            "This is a demo.  Here is the data you submitted: " +
+            json.dumps(post_data))
 
         # to instead signal that the data was properly submitted, return a JSON
         # object indicating success (see below commented line).  The client
@@ -116,17 +118,29 @@ def browser_check(request):
     return None
 
 
+def parse_http_post_body(request):
+    """ Return the HTTP post body as a dictionary """
+    post_data = urlparse.parse_qs(request.body)
+
+    # convert from this
+    #    {k1: [v1], k2: [v2], ...}
+    # to this
+    #    {k1: v1, k2: v2, ...}
+    return {k: (v[0] if len(v) == 1 else v)
+            for k, v in post_data.iteritems()}
+
+
 def json_success_response():
     return HttpResponse(
         '{"message": "success", "result": "success"}',
-        mimetype='application/json')
+        content_type='application/json')
 
 
 def json_error_response(error):
     """ Return an error as a JSON object """
     return HttpResponse(
         json.dumps({'result': 'error', 'message': error}),
-        mimetype='application/json')
+        content_type='application/json')
 
 
 def html_error_response(request, error):

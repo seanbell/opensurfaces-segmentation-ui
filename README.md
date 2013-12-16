@@ -27,11 +27,11 @@ tracker](https://github.com/seanbell/opensurfaces-segmentation-ui/issues).
 
 ## Version 1: Run with Django (Ubuntu Linux)
 
-1. Install dependencies (coffee-script, django, django compressor, ua parser):
+1. Install dependencies (`coffee-script`, `BeautifulSoup`, `django`,
+	`django-compressor`, `ua-parser`):
 
-   <b>Note:</b> this will downgrade your django installation if you are using
-   the newest version.  I suggest looking into the `virtualenv` package if this
-   is a problem for you.
+   <b>Note:</b> this will django installation if you are not on version 1.6.1.  I
+   suggest looking into the `virtualenv` package if this is a problem for you.
 <pre>
 ./django-setup-demo.sh
 </pre>
@@ -114,10 +114,6 @@ version, disable this by setting `ask_for_feedback` to `'false'` in the file
 I recommend asking for feedback after the 2nd or 3rd time a user has submitted,
 not the first time, and then not asking again (otherwise it gets annoying).
 Users usually don't have feedback until they have been working for a little while.
-
-#### Django version
-The demo project is written for Django 1.4, though it probably will work with
-other versions since it uses almost no django APIs.
 
 #### Compiling from coffeescript
 The javascript for the tool is automatically compiled from coffeescript files

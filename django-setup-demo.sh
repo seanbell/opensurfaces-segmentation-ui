@@ -7,7 +7,11 @@ sudo apt-get install npm nodejs
 sudo npm install -g coffee-script
 
 # install python dependencies: django, django-compressor, ua-parser
-sudo pip install "django>=1.4.3,<1.5" "django-compressor>=1.2,<2" "ua-parser>=0.3.2,<0.4"
+sudo pip install \
+	"django>=1.6.1,<1.7" \
+	"django-compressor>=1.3,<2" \
+	"ua-parser>=0.3.2,<0.4"
+	"BeautifulSoup<4.0"
 
 # In the settings file (example_project/example_project/settings.py),
 # automatically update the STATIC_ROOT variable to point to a temporary
