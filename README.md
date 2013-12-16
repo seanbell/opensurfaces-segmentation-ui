@@ -39,8 +39,8 @@ tracker](https://github.com/seanbell/opensurfaces-segmentation-ui/issues).
 
 3. Visit `localhost:8000` in a web browser
 
-To get the demo to work on Mac and Windows, you will have to look at
-`setup-demo.sh` and run the equivalent commands for your system.
+To get the demo to work on Mac and Windows, you will have to look at the above
+scripts and run the equivalent commands for your system.
 
 After drawing 6 polygons, the submit button will show you the POST data
 that would have been sent to the server.
@@ -60,7 +60,7 @@ sudo npm install -g coffee-script
 </pre>
 and then visit the printed URL (usually `0.0.0.0:8000`) in a web browser.
 
-To get the demo to work on Windows, you will have to look at `setup-demo.sh`
+To get the demo to work on Windows, you will have to look at the above scripts
 and run the equivalent commands for your system.
 
 ## Project Notes
