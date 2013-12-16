@@ -5,10 +5,10 @@ lightweight tool.  A dummy server backend is included to run the demo.
 
 ![](https://github.com/seanbell/opensurfaces-segmentation-ui/blob/master/screenshot.png?raw=true)
 
-To run the demo, there are two versions: one with django, and one without.  The
-django version uses a dummy django server and compiles the website live as
-necessary.  The non-django version is a flat html file extracted from the
-django version.
+To run the demo, there are two versions: one with django, and one with no
+framework.  The django version uses a dummy django server and compiles the
+website live as necessary.  The non-django version is a flat html file
+extracted from the django version.
 
 ## Version 1: Run with Django (Ubuntu Linux)
 
