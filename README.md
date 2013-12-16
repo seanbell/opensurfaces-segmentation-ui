@@ -10,6 +10,19 @@ framework.  The django version uses a dummy django server and compiles the
 website live as necessary.  The non-django version is a flat html file
 extracted from the django version.
 
+If you find this tool helpful, please cite our
+[project](http://opensurfaces.cs.cornell.edu/publications):
+<pre>
+	@inproceedings{bell13opensurfaces,
+		author = "Sean Bell and Paul Upchurch and Noah Snavely and Kavita Bala",
+		title = "OpenSurfaces: A Richly Annotated Catalog of Surface Appearance",
+		booktitle = "SIGGRAPH Conf. Proc.",
+		volume = "32",
+		number = "4",
+		year = "2013",
+	}
+</pre>
+
 ## Version 1: Run with Django (Ubuntu Linux)
 
 1. Install dependencies (coffee-script, django, django compressor, ua parser):
