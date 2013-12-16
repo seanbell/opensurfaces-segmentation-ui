@@ -31,7 +31,7 @@ tracker](https://github.com/seanbell/opensurfaces-segmentation-ui/issues).
 	`django-compressor`, `ua-parser`):
 
    <b>Note:</b> this will change your django current installation if you are
-   not on version 1.6.\*.  I suggest looking into the `virtualenv` package if
+   not on version `1.6.*`.  I suggest looking into the `virtualenv` package if
    this is a problem for you.
 <pre>
 ./django-setup-demo.sh
