@@ -74,32 +74,32 @@ server that the task is completed.  For more details, see
 
 When a user submits, the POST will contain these extra fields:
 <pre>
-	results: a dictionary mapping from the photo ID (which is just "1" in
-		this example) to a list of polygons.  Example:
-		{"1": [[x1,y1,x2,y2,x3,y3,...], [x1,y1,x2,y2,...]]}.
-		Coordinates are scaled with respect to the source photo dimensions, so
-		both x and y are in the range 0 to 1.
+results: a dictionary mapping from the photo ID (which is just "1" in
+	this example) to a list of polygons.  Example:
+	{"1": [[x1,y1,x2,y2,x3,y3,...], [x1,y1,x2,y2,...]]}.
+	Coordinates are scaled with respect to the source photo dimensions, so
+	both x and y are in the range 0 to 1.
 
-	time_ms: amount of time the user spent (whether or not
-		they were active)
+time_ms: amount of time the user spent (whether or not
+	they were active)
 
-	time_active_ms: amount of time that the user was
-		active in the current window
+time_active_ms: amount of time that the user was
+	active in the current window
 
-	action_log: a JSON-encoded log of user actions
+action_log: a JSON-encoded log of user actions
 
-	screen_width: user screen width
-	screen_height: user screen height
+screen_width: user screen width
+screen_height: user screen height
 
-	version: always "1.0"
+version: always "1.0"
 
-	If the user gives feedback, there will also be this:
-	feedback: JSON encoded dictionary of the form:
-	{
-		'thoughts': user's response to "What did you think of this task?",
-		'understand': user's response to "What parts didn't you understand?",
-		'other': user's response to "Any other feedback, improvements, or suggestions?"
-	}
+If the user gives feedback, there will also be this:
+feedback: JSON encoded dictionary of the form:
+{
+	'thoughts': user's response to "What did you think of this task?",
+	'understand': user's response to "What parts didn't you understand?",
+	'other': user's response to "Any other feedback, improvements, or suggestions?"
+}
 </pre>
 
 #### Feedback survey
