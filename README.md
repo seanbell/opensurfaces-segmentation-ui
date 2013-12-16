@@ -44,58 +44,6 @@ and run the equivalent commands for your system.
 
 ## Project Notes
 
-#### Django version
-The demo project is written for Django 1.4, though it probably will work with
-other versions since it uses almost no django APIs.
-
-#### Compiling from coffeescript (non-django version)
-You don't need to worry about this if using the django version.
-
-The javascript for the tool is compiled from coffeescript files by
-`django-compressor` and accessed by the client at a url of the form
-`/static/cache/js/*.js`.  Look at the `python-run-demo.sh` script for an
-example of manually compiling coffeescript files.
-
-#### Local `/static/` folder
-After you run the demo setup, the directory `static` will contain compiled css
-and javascript files.  If you change any part of the page (other than html),
-you will need to repopulate the static folder with the command:
-<pre>
-    example_project/manage.py collectstatic --noinput
-</pre>
-
-#### If you are building on top of this repository:
-In `example_project/settings.py`, change `SECRET_KEY` to some
-random string.
-
-#### If you want to add this demo to your own (separate) Django project:
-In `example_project/settings.py`, make the following changes:
-
-1. Make sure `STATIC_ROOT` is set to an absolute writeable path.
-
-2. Add this to the `STATICFILES_FINDERS` tuple:
-<pre>
-	'compressor.finders.CompressorFinder',
-</pre>
-
-3. Add this to the `INSTALLED_APPS` tuple:
-<pre>
-	'django.contrib.humanize',
-	'compressor',
-	'segmentation'
-</pre>
-
-4. Add this to `settings.py` (e.g. at the end):
-<pre>
-	# Django Compressor
-	COMPRESS_ENABLED = True
-	COMPRESS_OUTPUT_DIR = 'cache'
-	COMPRESS_PRECOMPILERS = (
-		('text/coffeescript', 'coffee --bare --compile --stdio'),
-		('text/less', 'lessc -x {infile} {outfile}'),
-	)
-</pre>
-
 #### POST data
 
 When a user submits, the data will be sent back to the same URL via an HTTP post.
@@ -133,3 +81,58 @@ version, disable this by setting `ask_for_feedback` to `'false'` in the file
 I recommend asking for feedback after the 2nd or 3rd time a user has submitted,
 not the first time, and then not asking again (otherwise it gets annoying).
 Users usually don't have ideas until they have been working for a little while.
+
+#### Django version
+The demo project is written for Django 1.4, though it probably will work with
+other versions since it uses almost no django APIs.
+
+#### Compiling from coffeescript
+The javascript for the tool is automatically compiled from coffeescript files
+by `django-compressor` and accessed by the client at a url of the form
+`/static/cache/js/*.js`.  This is set up already if using django.
+
+If not using django, the `python-run-demo.sh` does this for you by manually
+compiling coffeescript files and storing them in the `/static/` folder.
+
+#### Local `/static/` folder
+After you run the demo setup, the directory `static` will contain compiled css
+and javascript files.
+
+If you are usikng django and change any part of the static files (js, css,
+images, coffeescript), you will need to repopulate the static folder with this
+command:
+<pre>
+    example_project/manage.py collectstatic --noinput
+</pre>
+
+#### If you are building on top of this repository:
+In `example_project/settings.py`, change `SECRET_KEY` to some
+random string.
+
+#### If you want to add this demo to your own (separate) Django project:
+In `example_project/settings.py`, make the following changes:
+
+1. Make sure `STATIC_ROOT` is set to an absolute writeable path.
+
+2. Add this to the `STATICFILES_FINDERS` tuple:
+<pre>
+	'compressor.finders.CompressorFinder',
+</pre>
+
+3. Add this to the `INSTALLED_APPS` tuple:
+<pre>
+	'django.contrib.humanize',
+	'compressor',
+	'segmentation'
+</pre>
+
+4. Add this to `settings.py` (e.g. at the end):
+<pre>
+	# Django Compressor
+	COMPRESS_ENABLED = True
+	COMPRESS_OUTPUT_DIR = 'cache'
+	COMPRESS_PRECOMPILERS = (
+		('text/coffeescript', 'coffee --bare --compile --stdio'),
+		('text/less', 'lessc -x {infile} {outfile}'),
+	)
+</pre>
