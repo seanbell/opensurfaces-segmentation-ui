@@ -53,21 +53,27 @@ and run the equivalent commands for your system.
 #### POST data
 
 When a user submits, the data will be sent back to the same URL via an HTTP post.
-On success, the client expects a JSON response
+On success, the client expects a JSON response.  It will then notify the MTurk
+server that the task is completed.  For more details, see
+`example_project/segmentation/views.py`.
 
-The POST will contain these extra fields corresponding to data sent by the task
-window:
+When a user submits, the POST will contain these extra fields:
 <pre>
 	results: a dictionary mapping from the photo ID (which is just "1" in
 		this example) to a list of polygons.  Example:
 		{"1": [[x1,y1,x2,y2,x3,y3,...], [x1,y1,x2,y2,...]]}.
+
 	time_ms: amount of time the user spent (whether or not
 		they were active)
+
 	time_active_ms: amount of time that the user was
 		active in the current window
+
 	action_log: a JSON-encoded log of user actions
+
 	screen_width: user screen width
 	screen_height: user screen height
+
 	version: always "1.0"
 
 	If the user gives feedback, there will also be this:
