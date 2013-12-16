@@ -5,7 +5,13 @@ lightweight tool.  A dummy server backend is included to run the demo.
 
 ![](https://github.com/seanbell/opensurfaces-segmentation-ui/blob/master/screenshot.png?raw=true)
 
+To run the demo, there are two versions: one with django, and one without.  The
+django version uses a dummy django server and compiles the website live as
+necessary.  The non-django version is a flat html file extracted from the
+django version.
+
 ## Run with Django (Ubuntu Linux)
+
 1. Install dependencies (coffee-script, django, django compressor, ua parser):
 <pre>
 sudo ./setup-demo.sh
