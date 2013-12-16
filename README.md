@@ -31,7 +31,7 @@ tracker](https://github.com/seanbell/opensurfaces-segmentation-ui/issues).
    `ua-parser`, `BeautifulSoup`):
 
    <b>Note:</b> this will change your django current installation if you are
-   not somewhere between `1.4.10` and `1.6.*`.  I suggest looking into the
+   not somewhere between `1.4.*` and `1.6.*`.  I suggest looking into the
    `virtualenv` package if this is a problem for you.
 <pre>
 ./django-setup-demo.sh
