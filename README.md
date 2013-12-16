@@ -73,6 +73,8 @@ window:
 	}
 </pre>
 
+#### Feedback survey
+
 When the user finishes the task, a popup will ask for feedback.  In the django
 version, disable this by setting `ask_for_feedback` to `'false'` in the file
 `example_project/segmentation/vies.py`.  In the non-django verfsion, update the
@@ -80,7 +82,7 @@ version, disable this by setting `ask_for_feedback` to `'false'` in the file
 
 I recommend asking for feedback after the 2nd or 3rd time a user has submitted,
 not the first time, and then not asking again (otherwise it gets annoying).
-Users usually don't have ideas until they have been working for a little while.
+Users usually don't have feedback until they have been working for a little while.
 
 #### Django version
 The demo project is written for Django 1.4, though it probably will work with
