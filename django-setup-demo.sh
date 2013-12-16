@@ -11,7 +11,7 @@ sudo npm install -g coffee-script
 sudo pip install \
 	"django>=1.4.10,<1.7" \
 	"django-compressor>=1.3,<1.4" \
-	"ua-parser>=0.3.2,<0.4"
+	"ua-parser>=0.3.2,<0.4" \
 	"BeautifulSoup<4.0"
 
 # In the settings file (example_project/example_project/settings.py),
