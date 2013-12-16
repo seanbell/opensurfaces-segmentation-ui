@@ -21,6 +21,7 @@ def demo(request):
     When a user submits, the data will be in request.body.
     request.body will contain these extra fields corresponding
     to data sent by the task window:
+
         results: a dictionary mapping from the content.id (which is just "1" in
             this example) to a list of polygons.  Example:
             {"1": [[x1,y1,x2,y2,x3,y3,...], [x1,y1,x2,y2,...]]}.
