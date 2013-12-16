@@ -30,8 +30,8 @@ tracker](https://github.com/seanbell/opensurfaces-segmentation-ui/issues).
 1. Install dependencies (coffee-script, django, django compressor, ua parser):
 
    <b>Note:</b> this will downgrade your django installation if you are using
-   the newest version.  I suggest looking into `virtualenv` if this is a
-   problem for you.
+   the newest version.  I suggest looking into the `virtualenv` package if this
+   is a problem for you.
 <pre>
 ./django-setup-demo.sh
 </pre>
