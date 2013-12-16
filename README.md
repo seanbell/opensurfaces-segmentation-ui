@@ -77,7 +77,7 @@ success, the client expects a JSON response.  The client will then notify the
 MTurk server that the task is completed.  For more details, see
 `example_project/segmentation/views.py`.
 
-When a user submits, the POST will contain these extra fields:
+When a user submits, the POST will contain these fields:
 <pre>
 results: a dictionary mapping from the photo ID (which is just "1" in
 	this example) to a list of polygons.  Example:
