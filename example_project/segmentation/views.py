@@ -1,5 +1,4 @@
 import json
-import urlparse
 
 from ua_parser import user_agent_parser
 
@@ -47,14 +46,11 @@ def demo(request):
     """
     # replace this with a fetch from your database
     if request.method == 'POST':
-        # all of the user submitted data is in post_data.
-        post_data = parse_http_post_body(request)
-
         # this will return the POST data back to the client in the form of an
         # error message (so you can inspect it).
         return json_error_response(
             "This is a demo.  Here is the data you submitted: " +
-            json.dumps(post_data))
+            json.dumps(request.POST))
 
         # to instead signal that the data was properly submitted, return a JSON
         # object indicating success (see below commented line).  The client
@@ -118,18 +114,6 @@ def browser_check(request):
             target="_blank">Get Google Chrome</a>
         ''')
     return None
-
-
-def parse_http_post_body(request):
-    """ Return the HTTP post body as a dictionary """
-    post_data = urlparse.parse_qs(request.body)
-
-    # convert from this
-    #    {k1: [v1], k2: [v2], ...}
-    # to this
-    #    {k1: v1, k2: v2, ...}
-    return {k: (v[0] if len(v) == 1 else v)
-            for k, v in post_data.iteritems()}
 
 
 def json_success_response():
