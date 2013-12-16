@@ -52,18 +52,23 @@ that would have been sent to the server.
 
 ## Version 2: Run without Django (Linux or Mac)
 
-1. Install `npm`, `node.js`, and `coffee-script`.  On Ubuntu, this is:
+1. Install `npm` and `node.js`.  On Ubuntu, this is:
 <pre>
 sudo apt-get install npm nodejs
+</pre>
+
+2. Install `coffee-script`:
+<pre>
 sudo npm install -g coffee-script
 </pre>
 
-2. Build static files (js, css, img) and then start a local python-based
+3. Build static files (js, css, img) and then start a local python-based
    webserver:
 <pre>
 ./python-run-demo.sh
 </pre>
-and then visit the printed URL (usually `0.0.0.0:8000`) in a web browser.
+
+4. Visit `localhost:8000` in a web browser
 
 To get the demo to work on Windows, you will have to look at the above scripts
 and run the equivalent commands for your system.
