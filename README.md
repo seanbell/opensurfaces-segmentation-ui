@@ -63,7 +63,7 @@ When a user submits, the POST will contain these extra fields:
 		this example) to a list of polygons.  Example:
 		{"1": [[x1,y1,x2,y2,x3,y3,...], [x1,y1,x2,y2,...]]}.
 		Coordinates are scaled with respect to the source photo dimensions, so
-		both x and y are within 0 to 1.
+		both x and y are in the range 0 to 1.
 
 	time_ms: amount of time the user spent (whether or not
 		they were active)
