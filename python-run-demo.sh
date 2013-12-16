@@ -40,7 +40,7 @@ coffee --bare \
 		$JS_DIR/mturk/mt_submit.coffee \
 		$JS_DIR/mturk/mt_segment_material.coffee
 
-echo "Copying jss, css, img..."
+echo "Copying css, img..."
 cp -r $SRC_DIR/css $SRC_DIR/img static
 
 echo "Running webserver..."
