@@ -141,7 +141,7 @@ In `example_project/settings.py`, change `SECRET_KEY` to some
 random string.
 
 #### If you want to add this demo to your own (separate) Django project:
-In `example_project/settings.py`, make the following changes:
+In your `settings.py` file, make the following changes:
 
 1. Make sure `STATIC_ROOT` is set to an absolute writable path.
 
