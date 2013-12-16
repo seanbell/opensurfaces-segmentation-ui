@@ -14,28 +14,30 @@ django version.
 
 1. Install dependencies (coffee-script, django, django compressor, ua parser):
 <pre>
-sudo ./setup-demo.sh
+./django-setup-demo.sh
 </pre>
 
 2. Start the local webserver:
 <pre>
-./run-demo.sh
+./django-run-demo.sh
 </pre>
 
 3. Open a web browser and visit `localhost:8000`
 
-The demo should also work on Mac and Windows.  You will have to look at
+To get the demo to work on Mac and Windows, you will have to look at
 `setup-demo.sh` and run the equivalent commands for your system.
 
-After drawing 6 polygons, the submit button will show you the POST data.
+After drawing 6 polygons, the submit button will show you the POST data
+that would have been sent to the server.
 
-## Run without Django (Any Linux)
+## Run without Django (Linux or Mac)
 
 To set up the static files (js, css, img) and then start a local python-based
 webserver, run `./python-run-demo.sh` and then visit the printed URL (usually
 `0.0.0.0:8000`).
 
-If running without django, the submit button will simply generate an error.
+To get the demo to work on Windows, you will have to look at `setup-demo.sh`
+and run the equivalent commands for your system.
 
 ## Project Notes
 
