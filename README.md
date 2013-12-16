@@ -96,9 +96,11 @@ In `example_project/settings.py`, make the following changes:
 
 #### POST data
 
-When a user submits, the data will be in request.POST.
-request.POST will contain these extra fields corresponding
-to data sent by the task window:
+When a user submits, the data will be sent back to the same URL via an HTTP post.
+On success, the client expects a JSON response
+
+The POST will contain these extra fields corresponding to data sent by the task
+window:
 <pre>
 	results: a dictionary mapping from the photo ID (which is just "1" in
 		this example) to a list of polygons.  Example:

@@ -46,10 +46,19 @@ def demo(request):
     # replace this with a fetch from your database
     if request.method == 'POST':
         # all of the user submitted data is in request.POST.
-        # this prints it out so you can see all its fields:
+        # this will return the POST data back to the client in the form of an
+        # error message (so you can inspect it).
         return json_error_response(
             "This is a demo.  Here is the data you submitted:" +
             json.dumps(request.POST))
+
+        # to instead signal that the data was properly submitted, return a JSON
+        # object indicating success (see below commented line).  The client
+        # will then tell the MTURK server that the task was completed.
+        # See segmentation/static/jss/mturk/mt_submit.coffee (search for
+        # window.location) for the code that does this on the client side.
+
+        #return json_success_response()
     else:
         response = browser_check(request)
         if response:
@@ -105,6 +114,12 @@ def browser_check(request):
             target="_blank">Get Google Chrome</a>
         ''')
     return None
+
+
+def json_success_response():
+    return HttpResponse(
+        '{"message": "success", "result": "success"}',
+        mimetype='application/json')
 
 
 def json_error_response(error):
