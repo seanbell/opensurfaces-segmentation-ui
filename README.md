@@ -97,7 +97,7 @@ If not using django, the `python-run-demo.sh` does this for you by manually
 compiling coffeescript files and storing them in the `/static/` folder.
 
 #### Local `/static/` folder
-After you run the demo setup, the directory `static` will contain compiled css
+After you run the demo setup, the directory `/static/` will contain compiled css
 and javascript files.
 
 If you are usikng django and change any part of the static files (js, css,
