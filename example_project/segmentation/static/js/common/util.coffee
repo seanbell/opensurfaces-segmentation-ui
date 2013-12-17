@@ -32,12 +32,9 @@ select_image_url = (urls, size) ->
 # non-CORS version
 get_cors_url = (url) ->
   if url.indexOf('?') == -1
-    if url.indexOf("?origin=") == -1
-      url + '?origin=' + window.location.host
-    else
-      url
+    url + '?origin=' + window.location.host
   else
-    if url.indexOf("&origin=") == -1
+    if url.indexOf("?origin=") == -1 and url.indexOf("&origin=") == -1
       url + '&origin=' + window.location.host
     else
       url
