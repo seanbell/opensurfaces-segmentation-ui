@@ -9,6 +9,7 @@
 	<meta name="description" content='OpenSurfaces is a large database of annotated surfaces created from real-world consumer photographs. Our annotation framework draws on crowdsourcing to segment surfaces from photos, and then annotate them with rich surface properties, including material, texture and contextual information.'/>
 	<meta name="author" content="Cornell University"/>
 
+	<!-- merged css -->
 	<link href="/static/css/opensurfaces-segmentation-ui.css" rel="stylesheet" type="text/css" />
 	<style>
 		canvas { border: 1px solid #969696; }
@@ -412,14 +413,7 @@
 		};
 		window.get_modal_feedback = function() {
 			var feedback = {};
-			var gender = $('input[name=feedback-gender]:checked', '#modal-feedback-form').val();
-			if (gender) {
-				feedback.gender = gender;
-			}
-			var names = [
-
-				'thoughts', 'understand', 'other'
-			];
+			var names = ['thoughts', 'understand', 'other'];
 			for (var i = 0; i < names.length; i++) {
 				var value = $.trim($('#feedback-' + names[i]).val());
 				if (value) {

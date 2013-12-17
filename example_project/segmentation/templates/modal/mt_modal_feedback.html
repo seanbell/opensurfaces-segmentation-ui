@@ -93,8 +93,10 @@ window.show_modal_feedback = function(label_message, prompt_message, on_submit) 
 };
 window.get_modal_feedback = function() {
 	var feedback = {};
+	{% comment %}
 	var gender = $('input[name=feedback-gender]:checked', '#modal-feedback-form').val();
 	if (gender) { feedback.gender = gender; }
+	{% endcomment %}
 	var names = [
 		{% comment %}
 		'age', 'language', 'city', 'country',
