@@ -72,7 +72,6 @@ $( ->
 
   mt_submit_impl = (data_callback) -> ->
     if not mt_submit_ready then return
-    window.show_modal_loading("Submitting...", 0)
 
     data = data_callback()
     feedback = window.get_modal_feedback?() if window.ask_for_feedback
@@ -82,6 +81,7 @@ $( ->
     console.log "submit data:"
     console.log data
 
+    window.show_modal_loading("Submitting...", 0)
     $.ajax(
       type: 'POST'
       url: window.location.href
