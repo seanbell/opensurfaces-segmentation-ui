@@ -9,10 +9,7 @@
 	<meta name="description" content='OpenSurfaces is a large database of annotated surfaces created from real-world consumer photographs. Our annotation framework draws on crowdsourcing to segment surfaces from photos, and then annotate them with rich surface properties, including material, texture and contextual information.'/>
 	<meta name="author" content="Cornell University"/>
 
-	<link href="/static/css/jquery-ui-1.9.1.custom.min.css" rel="stylesheet" type="text/css"/>
-	<link href="/static/css/bootstrap-2.2.1.min.css" rel="stylesheet" type="text/css"/>
-	<link href="/static/css/mturk.css" rel="stylesheet" type="text/css" />
-
+	<link href="/static/css/opensurfaces-segmentation-ui.css" rel="stylesheet" type="text/css" />
 	<style>
 		canvas { border: 1px solid #969696; }
 		body { padding: 0 }
@@ -398,9 +395,6 @@
 
 	<!-- Script for feedback survey -->
 	<script type="text/javascript">
-		window.ask_for_feedback = true;
-		window.feedback_bonus = '$0.02';
-
 		window.show_modal_feedback = function(label_message, prompt_message, on_submit) {
 			$('#modal-feedback-label').empty();
 			$('#modal-feedback-bonus').empty();
@@ -489,12 +483,17 @@
 
 		// each polygon must have at least this many vertices:
 		window.min_vertices = 4;
+
+		// if true, show a popup at the end of the task
+		window.ask_for_feedback = true;
+
+		// amount of money (bonus) promised for completing the survey
+		window.feedback_bonus = '$0.02';
 	</script>
 
-	<!-- merged libraries -->
-	<script type="text/javascript" src="/static/js/build-js.js"></script>
-	<!-- compiled coffeescript -->
-	<script type="text/javascript" src="/static/js/build-coffee.js"></script>
+	<!-- merged javascript libraries and compiled coffeescript -->
+	<script type="text/javascript" src="/static/js/opensurfaces-segmentation-ui.js"></script>
+
 <!-- END MAIN SCRIPTS -->
 
 </body>
