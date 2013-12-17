@@ -59,7 +59,7 @@ echo "Merging css..."
 cat $CSS_FILES > $BUILD_DIR/css/opensurfaces-segmentation-ui.css
 
 echo "Copying images..."
-cp -r $SRC_DIR/img $BUILD_DIR
+cp -r $IMG_DIR $BUILD_DIR
 
 echo "Cleanup..."
 rm build-coffee.js
