@@ -3,6 +3,8 @@ This repository contains the segmentation user interface from the
 [OpenSurfaces](http://opensurfaces.cs.cornell.edu) project, extracted as a
 lightweight tool.  A dummy server backend is included to run the demo.
 
+View the demo [online](http://seanbell.ca/opensurfaces-segmentation-ui/).
+
 ![](https://github.com/seanbell/opensurfaces-segmentation-ui/blob/master/screenshot.png?raw=true)
 
 To run the demo, there are two versions: one with django, and one with no
