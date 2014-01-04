@@ -28,6 +28,9 @@ If you find this tool helpful, please cite our
 and report any bugs using the [Github issue
 tracker](https://github.com/seanbell/opensurfaces-segmentation-ui/issues).
 
+Please star this project on Github; it's nice to see how many people are using
+our code.
+
 ## Version 1: Run with Django (Ubuntu Linux)
 
 1. Install dependencies (`coffee-script`, `django`, `django-compressor`,
