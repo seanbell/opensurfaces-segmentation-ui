@@ -3,6 +3,9 @@
 # install coffee-script dependencies (npm, node.js)
 sudo apt-get install npm nodejs
 
+# symbolically link nodejs to node so django can find it
+sudo ln -s /usr/bin/nodejs /usr/bin/node
+
 # install coffee-script
 sudo npm install -g coffee-script
 
